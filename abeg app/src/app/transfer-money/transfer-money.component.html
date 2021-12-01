@@ -1,0 +1,111 @@
+<div class="transferbox" >
+    <br>
+    <h4>Make a payment</h4>
+    <nav class="nav justify-content-center">
+       <ul class="nav nav-pills nav-fill ">
+           <li class="nav-item  me-4" >
+            <a class="nav-Link" (click)='showDirect()' > Main Account</a>
+           </li>
+           <li class="nav-item me-2">
+            <a  class="nav-Link" (click)='showWallet()' >Wallet Account</a>
+           </li>
+       </ul> 
+    </nav>
+     
+    
+</div>
+<br/>
+<div *ngIf="transferFrom == 'Account'">
+    <span style="margin-left: 7%;"><strong>Transfer money from main account </strong></span>
+    <div *ngIf="pageToShow == 'Detail'">
+        <div class="boxx">
+            <label >Account Number:</label><br>
+            <input class="formclass" type="number" [(ngModel)]="toSendTo.accountNumber" >
+        </div>
+        <div class="boxx">
+            <label >Account Name:</label> <br>
+            <input class="formclass" [(ngModel)]="toSendTo.name" >
+        </div>
+        <div class="boxx">
+            <label >Amount:</label> <br>
+            <input class="formclass" type="number" [(ngModel)]="toSendTo.amount" >
+        </div>
+        <button class="btn btn-success" style="margin-left: 40%; margin-top: 5%;" (click)="setDetails()">Send</button>
+    </div>
+    <div *ngIf="pageToShow == 'Pin'">
+        <div style="text-align: center;">
+            <label >Set code:</label> <br>
+            <input class="formclass" [(ngModel)]="toSendTo.pin"  > <br> <br>
+            <button class="btn btn-success"  (click)="setPin()">Send</button>
+        </div>
+    </div>
+    <div *ngIf="pageToShow == 'Token'"  style="text-align: center;"> 
+        <br>
+        <p  style="text-align: center;"> Your Token is  <br> <strong>   {{token}}</strong></p>
+        <div style="text-align: center;">
+            <label >Token:</label> <br>
+            <input class="formclass" [(ngModel)]="toSendTo.token" > <br><br>
+            <button class="btn btn-success"  (click)="transferNow()">confirm payment</button>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="transferFrom == 'Wallet'">
+    <span style="margin-left: 15%;"><strong>Transfer money from wallet</strong></span>
+    <div class="walletBox">
+        <div *ngFor="let user of user">
+            <table>
+                <tr>
+                    <th>Name </th>
+                    <th>Account Number</th>
+                </tr>
+
+                <tr  (click)="userDetail(user.Id)">
+                    <td> {{user.FirstName}} {{user.LastName}}</td>
+                    <th>{{user.accountNumber}}</th>
+                </tr>
+            </table>
+             
+        </div>
+    </div>
+    <div *ngIf="pageToShow == 'Detail'" style="text-align: center;">
+        <div class="boxx">
+            <input placeholder="account number" class="formclass" [(ngModel)]="toSendTo.accountNumber" >
+        </div>
+        <div class="boxx">
+            <input placeholder="account name" class="formclass" [(ngModel)]="toSendTo.name" >
+        </div>
+        <div class="boxx">
+ 
+                <select [(ngModel)]='opValue'  class="formclass" >
+                    <option *ngFor="let wallet of Wuser2"  [value]="wallet.Id">{{wallet.name}}</option>
+                </select>
+      
+        </div>
+        <div class="boxx">
+            <input placeholder="amount" class="formclass" [(ngModel)]="toSendTo.amount" >
+        </div> <br>
+        <button class="btn btn-success" (click)="setDetails2()">Send</button>
+    </div>
+    <div *ngIf="pageToShow == 'Pin'">
+        <div class="boxx" >
+            <label >Set code:</label> <br>
+            <input class="formclass" [(ngModel)]="toSendTo.pin"  > <br><br>
+            <button class="btn btn-success" (click)="setPin2()">Send</button>
+        </div>
+    </div>
+    <div *ngIf="pageToShow == 'Token'" style="text-align: center;"> 
+        <br>
+        <p  style="text-align: center;"> Your Toke is <br><strong>   {{token}}</strong></p>
+        <div class="boxx">
+            <label >Token:</label><br>
+            <input class="formclass" [(ngModel)]="toSendTo.token" > <br><br>
+            <button class="btn btn-success" (click)="transferNow2()">confirm payment</button>
+        </div>
+     
+    </div>
+
+
+     
+</div>

@@ -1,0 +1,20 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div *ngIf="pageShow=='showRecieved'">
+                <div *ngFor="let history of recievedhistory;let i =index">
+                     {{i+1}}.  You Sent {{history.amountFunded | currency : 'NGN': 'symbol-narrow'}} to {{history.accountFunded}} {{history.accountFundedId}} on {{history.date}} at {{history.time}}  
+                </div>
+            </div>
+            <div *ngIf="pageShow=='showTransfer'">
+                <div *ngFor="let history of transferhistory; let i =index">
+                    {{i+1}}.   You Recieved   {{history.amountSent | currency : 'NGN': 'symbol-narrow'}}  from {{history.accountFundedName}} on {{history.date}} at {{history.time}}
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+</div>

@@ -1,0 +1,69 @@
+<div class="walletprofile">
+    <svg (click)="deleteWallet()" style="margin-left: 93%; " xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+        <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+      </svg> 
+      <svg (click)="cancelwallet()" xmlns="http://www.w3.org/2000/svg" style="margin-left: 15px;" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+        <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"/>
+      </svg>
+     
+<div style="text-align: center;">    
+     
+    <br> <br>   
+    <h3> WALLET DETAILS</h3>
+    Wallet Name: <br>
+    <strong> {{userWallet.name | uppercase}} </strong> <br>
+
+    Wallet Identifcation Number: <br> <strong> {{userWallet.Id}} </strong><br>
+
+    wallet Funds: <br> <strong> {{userWallet.amount | currency :'NGN' :'symbol-narrow'}}</strong> <br> <br>
+    <div class="continer-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <button (click)="fundWallet()" class="btnn">Add fund</button>
+                <!-- funding wallet component -->
+                <div *ngIf="show =='fund'">
+                     <app-fund-wallet [walletToBeFundedId]="userWallet.Id"></app-fund-wallet>
+                </div>
+                 <!-- funding wallet ends -->
+            </div>
+            <div class="col-md-4">
+                <button (click)="withdrawFund()" class="btnn">Withdraw Fund</button>
+                
+                 <!-- withdrawFund back to the main account  -->
+            <div *ngIf="show =='withdrawFund'">
+                     <app-withdraw-fund-page [walletToBeFundedId]="userWallet.Id"></app-withdraw-fund-page>
+            </div>
+
+            <!-- withdraw fund page ends  -->
+            </div>
+            <div class="col-md-4">
+                <button class="btnn" (click)="showHistory()">Check history</button>
+                <div *ngIf="show =='showHistory'">
+                    <nav class="nav justify-content-center">
+                        <ul class="nav nav-pills nav-fill ">
+                            <li class="nav-item me-2">
+                                <a  class="nav-Link" (click)="SentHistory()">Sent Requests</a>
+                               </li>
+                            <li class="nav-item  me-4" >
+                             <a class="nav-Link" (click)="RecievedHistory()" >Recieved Requests</a>
+                            </li>
+                        </ul> 
+                     </nav>
+                </div>
+
+            </div>
+
+        </div> 
+    </div>
+    <div *ngIf="show =='showHistory'" class="historyBox" >
+    <div>
+        <app-wallet-history [wallet]="userWallet"  [pageShow]="showPage"></app-wallet-history>
+    </div>
+    </div>
+    
+</div>
+
+
+
+</div>

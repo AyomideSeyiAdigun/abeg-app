@@ -1,0 +1,16 @@
+.fundBox{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.formclass{
+    width: 240px;
+    height: 35px;
+    background-color: cornsilk;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+}
+.boxx{
+    margin-bottom: 4%;
+}

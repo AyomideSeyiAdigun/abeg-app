@@ -1,0 +1,16 @@
+.btnn{
+    width: 150px;
+    background-color: darkblue;
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    color:white;
+}
+.historyBox{
+    text-align: justify;
+     margin-top: 15px;
+     height: 250px;
+     overflow: auto;
+     width: 97%;
+}

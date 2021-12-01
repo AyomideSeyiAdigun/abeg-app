@@ -1,0 +1,9 @@
+.boxx{
+    text-align: center;
+}
+.historyBox{
+    height: 460px;
+    width: 98%;
+    overflow: auto;
+     
+}

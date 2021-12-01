@@ -1,0 +1,158 @@
+<div class="bodybox">
+    <br>
+
+<div class="bodybox2">
+
+  
+<app-side-bar (sendCash)="gotoTransferPage($event)" (openFundMain)="gotoFundMainAccountPage($event)" (goHome)="gotoHome($event)" (gotoWalletPage)="gotocreatewallet($event)" (gotoProfilePage)="gotouserprofile($event)"></app-side-bar>
+<br>
+ 
+   <!-- hide all    -->
+<div class="appll" *ngIf="hideall =='profile'">
+            <div class="templateboard">
+                             <br>
+            <span style="margin-left:4%;"><strong> Balance </strong></span> <span style="margin-left: 70%;"><i class="bi bi-cash"></i></span>
+                    <br> <br>
+
+            <span style="margin-left:6%; font-size: large;">{{total | currency : 'NGN' : 'symbol-narrow'}}</span>
+
+        </div>
+
+
+  
+
+<div class="historyBox">
+    <br>
+    <span style="margin-left: 10%;"><strong> Transaction History </strong> </span>  <span style="margin-left: 37%;"><i class="bi bi-clipboard-data"></i></span><br>
+
+    <button style="border: transparent; margin-left: 20%;background-color: transparent;" (click)="gotoHistoryPage()">click me to see all history</button>
+</div>
+<div class="seeRequestBox"> 
+    <br>
+   <span style="margin-left: 10%;"> <strong>See peoeple's Requests </strong> </span> <span style="margin-left: 28%;"><i class="bi bi-envelope-fill"></i></span><br>
+    <button style="border: transparent; margin-left: 20%;background-color: transparent;" (click)="gotoRecieveRequestMoneyPage()">check requests</button>
+</div>
+
+
+
+    <div class="createWalletBox">
+        <!-- create wallet -->
+        <div *ngIf="showcomp=='profile'">       
+             <div class="createBalance">
+            history
+        </div>
+        <app-create-wallet></app-create-wallet>
+    </div>
+     <!-- create wallet ends -->
+
+
+        <!-- send transfer Requests page -->
+    <div *ngIf="showcomp=='moneyRequestPage'">
+    <app-send-money-request-page></app-send-money-request-page>
+  </div>
+   <!-- send transfer request page ends -->
+
+   <!-- fund main account -->
+   <div *ngIf="showcomp=='fundMain'">
+    <app-funding-main-account></app-funding-main-account>
+</div>
+
+<!-- fund main account ends -->
+
+<!-- transfer money page  -->
+<div  *ngIf="showcomp=='transferPage'">
+    <app-transfer-money ></app-transfer-money>
+</div>
+ <!-- transfer page ends -->
+
+  <!-- recieve transfer request page -->
+  <div *ngIf="showcomp=='recieveMoneyRequestPage'">
+    <app-transferrequest-page></app-transferrequest-page>
+</div>
+ <!-- recieve transfer request ends  -->
+
+ <!-- transaction history start -->
+ <div *ngIf="showcomp=='transactionHistoryPage'">
+ <app-transaction-history></app-transaction-history>
+</div>
+ <!-- transaction history ends  -->
+</div>
+   
+
+
+ 
+ 
+
+<div class="requestMoneyBox">
+    
+    <svg (click)="gotoRequestMoneyPage()" style="margin-left: 40px;margin-top:20px;" xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-wallet2" viewBox="0 0 16 16">
+        <path d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499L12.136.326zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484L5.562 3zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"/>
+      </svg> <br>
+    <button style="margin-left: 25px;" (click)="gotoRequestMoneyPage()" class="btn">Request Money</button>
+</div>
+
+
+<!-- show walllet  -->
+<div class="walletBox">
+    <span style="margin-left: 25%;"> WALLETS </span>
+<div *ngFor="let wallet of wallets;let i =index">
+
+ <div (click)="OpenWallet(wallet.Id)" style="width: 80%; height: 40px; text-align: center; background-color: rgb(191, 203, 216); margin-top: 3px; margin-left: 5%;">
+       {{wallet.name | uppercase}}
+    </div>
+</div>
+</div>
+<!-- show wallet ends -->
+<div  (click)="gotoProfilePage()" style="margin-left: 92%;margin-top: -570px;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+      </svg>
+</div>
+<div  style="margin-left: 88%; margin-top: -27px;"  >
+    <svg  data-bs-toggle="modal" data-bs-target="#notification"   xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
+        <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
+      </svg>  
+</div>
+<!-- all div show -->
+</div>
+
+
+<!-- wallet profile -->
+<div *ngIf="hideall=='walletProfile'" class="walletProfile">
+    <app-wallet-page [Wid]='walletId'  (goHome)="gotoHome($event)" (walletLeft)='collectingWallet($event)'></app-wallet-page>
+</div>
+<!-- wallet profile ends -->
+
+<!-- user profile page -->
+<div *ngIf="hideall=='userprofile'" class="userprofile" >
+    <app-profile-page (goHome)="gotoHome($event)"></app-profile-page>
+</div>
+<!-- user profile page ends  -->
+
+<!-- Modal -->
+<!-- Modal -->
+<div class="modal fade" id="notification" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div *ngFor="let notify of notification">
+              <p>{{notify}}</p>
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+           
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+
+</div>
+</div>

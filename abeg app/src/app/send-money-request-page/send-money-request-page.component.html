@@ -1,0 +1,66 @@
+ <div>
+     <br>
+     <h3 style="margin-left: 20%;">Request Money</h3>
+     <!-- showing user box -->
+     <div>
+         <span style="margin-left: 30%;"><strong>Available Users</strong></span>
+         <div class="usersCon">
+             <table  cellspacing="2" cellpadding="1" >
+                 <tr>
+                     <th>s/n</th>
+                     <th>Name</th>
+                    <th>Account Number</th>
+                 </tr>
+                <tr  *ngFor="let user of allUsers;let i=index" cellspacing="2" cellpadding="1"   (click)="askUser(user.Id)">
+                    <th>{{i+1}}.</th>
+                    <td>{{user.LastName}} {{user.FirstName}}</td>
+                    <td>{{user.accountNumber}}</td>
+                </tr>
+            </table>
+                
+        </div>
+       
+        
+
+     </div>
+      <!-- showing user box ends -->
+     
+      <!-- request box -->
+     <div  >
+         <span style="margin-left: 37%;"><strong>Details</strong></span>
+        <div>
+            
+            <input class='formclass' placeholder="Full name" [(ngModel)]=" detailOfReciever.name"/>
+        </div>
+        <div>
+            <input class='formclass' placeholder="Account number" [(ngModel)]="detailOfReciever.accountNumber"/>
+        </div>
+        <div>
+            <input class='formclass' placeholder="Amount" [(ngModel)]="detailOfReciever.amount"/>
+        </div>
+        <div>
+             <textarea class='formclass' placeholder="Reasson" [(ngModel)]="detailOfReciever.message" ></textarea>
+        </div>
+        <div>
+          <button class="btnn" (click)="sendRequest()"  data-bs-toggle="modal" data-bs-target="#success">send request</button>
+        </div>
+     </div>
+     <!-- request box ends -->
+
+     <div class="modal fade" id="success" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              sent successfully
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+ </div>

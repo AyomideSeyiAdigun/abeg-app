@@ -1,0 +1,27 @@
+<div class="birthdayBox">
+
+    <h5>Kindly Input you address </h5>
+   
+        <div class="formClass" style="margin-left: 35%;">    
+            <input class="form-control"  [(ngModel)]="Address.street" placeholder="Street"/>
+        </div>
+        <div class="formClass" style="margin-left: 35%;">
+            <input class="form-control" [(ngModel)]="Address.city" placeholder="City"/>
+        </div>
+        <div class="formClass" style="margin-left: 35%;">
+            <input class="form-control" [(ngModel)]="Address.state" placeholder="State"/>
+        </div>
+        <div class="formClass" style="margin-left: 35%;">
+            <input class="form-control" [(ngModel)]="Address.country" placeholder="Country"/>
+        </div>
+        <button class="btn btn-primary" (click)="submitUserAddress()">submit</button>
+        <br><br>
+        <span> <strong>!</strong> Address given is fully confidential.It can only be seen by you.</span>
+        <div style="text-align: center; margin-top: 19%;">
+            <hr style="width: 50%; margin-left: 12%;">
+    <span style="font-size:small; "> © 1999–2021 All rights reserved.</span> <br>
+    <a href="" class="linkTag">Privacy</a> <a href="" class="linkTag">Legal</a> <a href="" class="linkTag">Contact</a>
+    </div>
+  
+ 
+</div>

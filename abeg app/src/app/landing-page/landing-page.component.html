@@ -1,0 +1,138 @@
+<div>
+<!-- landingPage starts -->
+<div >  
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">ETHWAS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+       
+        <li class="nav" style="margin-left: 450px;">
+           <button (mouseover)="openBar()" class="personalBtn" >PERSONAL <i class="fa fa-angle-down" aria-hidden="true" *ngIf="!showBar"></i>
+            <i class="fa fa-angle-up" aria-hidden="true" *ngIf="showBar"></i></button>
+           
+           
+        </li>
+        <li class="nav-item me-4 " style="margin-left: 275px;">
+            <button class="loginBtn" (click)="gotoLoginPage()">Log in</button>
+        </li>
+        <li class="nav-item ">
+            <button class="signinBtn" (click)="gotoSignUpPage()">Sign Up</button>
+        </li>
+      </ul>
+     
+    </div>
+  </div>
+</nav>
+</div>
+<div class="hideBar" *ngIf="showBar"  >
+ <div class="firstBox">
+    <span ><i class="fa fa-times" (click)='showBar=false' style="color: white; margin-left:90%;" aria-hidden="true"></i></span>
+
+    <div>
+        <p (mouseover)="textDeco()" > <a class="barHead" href="">How ETHWAS works</a> <br><a class="barBody" href="">What can you do with a personal account</a></p>
+        
+    </div>
+    <div>
+        <p (mouseover)="textDeco()" > <a class="barHead" href="">Send Payments</a><br/><a class="barBody" href="">Send payment abroad</a></p>
+        
+    </div>
+</div>
+<div class="secondBox">
+    <div>
+        <p (mouseover)="textDeco()" > <a class="barHead" href="">Pay Online</a> <br/><a class="barBody" href="">Online payment without borders</a></p>
+        
+    </div>  
+    <div>
+        <p (mouseover)="textDeco()" > <a class="barHead" href="">Search for Deals</a> <br/> <a class="barBody" href="">pay with ETHWAS and save Money</a></p>
+        
+    </div>
+
+    </div>
+   </div>
+
+<div  class="body" style="background-image:url('./assets/phonepresser.jpg')" (mouseover)="showBar=false" >
+    <div class="bodyCover">
+       <div class="firstBackTextBox">
+        <h2 style="color: white;">The simpler, safer way to pay online.</h2>
+        <br>
+        <p> 
+            <button class="signUp" (click)="gotoSignUpPage()">Sign Up For Free</button>
+        </p>
+       </div>
+    </div>
+    
+</div>
+<!-- landing page ends -->
+ 
+
+
+</div>
+<div class="Bbody2" >
+    <h2 style="padding-top: 100px;">ETHWAS is for everyone who pays online.</h2>
+    <br>
+    <i class="fa fa-user" aria-hidden="true"></i><br><br>
+    <p style="font-size: 25px;">Individuals</p>
+    <p>Find out why we have more than 200M active accounts worldwide.</p>
+    <button class="individualLearnMore">Learn More</button>
+</div>
+<div class="body3">
+    <h3 style="padding-top: 60px;">ETHWAS connects buyers and sellers.</h3>
+    <button class="forbuyerBtn">For buyers</button>
+    <br>
+    <button class="individualLearnMore">Learn More</button>
+</div>
+<div class="body4">
+    <h2 style="text-align: center; " class="mb-4">Join 200M active ETHWAS accounts worldwide.</h2>
+    <br><br>
+    <div class="container mt-4">
+        <div class="row align-items-start">
+    <div class="col">
+        <h4>Safer and protected</h4>
+        <p>Shop with peace of mind. We don’t share your full financial information with sellers. And PayPal Buyer Protection covers your eligible purchases if they don’t show up or match their description.</p>
+        <a href=""class="linkTag">More about security</a>
+    </div>
+    <div class="col">
+        <h4>Simple and convenient</h4>
+        <p>Pay online with your PayPal password and skip entering your financial information. Or pay even faster with One Touch™, stay logged in and check out without entering your password. Plus, rest assured knowing Buyer Protection is available for your eligible purchases.</p>
+        <a href="" class="linkTag">More about One Touch™</a>
+    </div>
+    <div class="col">
+        <h4>Mostly free, always upfront</h4>
+        <p>It’s free to open a PayPal account and buy something using PayPal unless it involves a currency conversion.</p>
+        <a href="" class="linkTag">More about fees</a>
+    </div>
+</div>
+</div>
+</div>
+<div class="body5">
+<h4 style="padding-top: 6%;">Sign up and get started.</h4>
+<br>
+<button class="getStarted" (click)="gotoSignUpPage()">Get started</button>
+</div>
+
+
+<div class="body6">
+    <a href="" class="linkTag2">Help and Contact</a>
+    <a href="" class="linkTag2">Fees </a>
+    <a href="" class="linkTag2">Security</a>
+    <a href="" class="linkTag2">Features</a>
+    <a href="" class="linkTag2">Shop</a> <br/>
+    
+    <hr style="width: 93%;">
+    <a href="" class="linkTag3">About</a>
+    <a href="" class="linkTag3">Newsrooms</a>
+    <a href="" class="linkTag3">Jobs</a>
+    <a href="" class="linkTag3">Sitemap</a>
+    <a href="" class="linkTag3">Developers</a>
+    <span class="linkTag3" style="margin-left: 25%;"> © 1999–2021 All rights reserved.</span>
+    <a href="" class="linkTag3">Accessibility</a>
+    <a href="" class="linkTag3">Privacy</a>
+    <a href="" class="linkTag3">Legal</a>
+    <br> <br>
+    <p style="font-size: 10px; font-weight: bold; color: rgb(100, 98, 98);">Consumer advisory - ETHWAS-RECHERCHE. Ltd., the holder of ETHWAS's stored value facility, does not require the approval of the Monetary Authority of Hope Villa. Users are advised to read the <span><a href="" style="text-decoration: none;">terms and conditions    </a></span> carefully.</p>
+
+</div>

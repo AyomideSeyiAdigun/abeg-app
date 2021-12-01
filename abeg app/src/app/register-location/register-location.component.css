@@ -1,0 +1,15 @@
+.linkTag{
+    text-decoration: none;
+    font-size: small;
+    color: rgb(133, 132, 132);
+    margin-right: 5px;
+}
+.birthdayBox{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.formClass{
+    width: 400px;
+    margin-top: 15px;
+}

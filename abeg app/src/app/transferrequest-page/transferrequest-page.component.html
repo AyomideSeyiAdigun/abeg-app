@@ -1,0 +1,65 @@
+<div *ngIf="page == 'List'" class="boxx">
+    <h4>Money Requests</h4>
+    <nav class="nav justify-content-center">
+        <ul class="nav nav-pills nav-fill ">
+            <li class="nav-item me-2">
+                <a  class="nav-Link" (click)="displayrecieveRequest()">Recieved Requests</a>
+               </li>
+            <li class="nav-item  me-4" >
+             <a class="nav-Link" (click)="displaysentRequests()">Sent Requests</a>
+            </li>
+        </ul> 
+     </nav>
+
+
+
+    <div class="moneyRequestBox">
+        <div *ngIf="showPage=='recieveRequest'">
+        <div *ngFor ="let request of requests;let i=index">
+            <p>{{i+1}}. {{request.amount | currency : 'NGN' : 'symbol-narrow'}} Money request from {{request.senderName}} {{request.message }} <button (click)="acceptRequest(request)">accept</button> <button (click)="deleteRequest(request.Id,request.senderAccountNo)">decline</button></p>
+        </div>
+        </div>
+        <div *ngIf="showPage=='sentRequests'">
+        <div *ngFor ="let request of sentRequest;let i =index">
+            <p>{{i+1}}. Requested {{request.amount | currency : 'NGN' : 'symbol-narrow'}} from {{request.name}} {{request.message }} status:{{request.status}} <button (click)="deleteRequest(request.Id,request.accountNumber)">delete request</button></p>
+        </div>
+        </div>
+
+    </div>
+</div>
+
+<div *ngIf="page == 'Transfer'" class="boxx">
+    <h3>Transfer money from main account </h3>
+    <div *ngIf="pageToShow == 'Detail'">
+        <div>
+            <label >Account Number</label> <br>
+            <input class="formclass" [(ngModel)]="toSendTo.accountNumber" >
+        </div>
+        <div>
+            <label >Account Name</label> <br>
+            <input class="formclass" [(ngModel)]="toSendTo.name" >
+        </div>
+        <div>
+            <label >Amount</label> <br>
+            <input class="formclass" [(ngModel)]="toSendTo.amount" >
+        </div>
+        <button class="btn btn-success" (click)="setDetails()">Send</button>
+    </div>
+    <div *ngIf="pageToShow == 'Pin'" class="boxx">
+        <div>
+            <label >set code</label> <br>
+            <input class="formclass" [(ngModel)]="toSendTo.pin"  > <br><br>
+            <button class="btn btn-success" (click)="setPin()">Send</button>
+        </div>
+    </div>
+    <div *ngIf="pageToShow == 'Token'" class="boxx"> 
+        <div>
+            {{token}}
+            <label >token</label> <br>
+            <input class="formclass" [(ngModel)]="toSendTo.token" > <br><br>
+            <button class="btn btn-success" (click)="transferNow()">confirm payment</button>
+        </div>
+      
+    </div>
+</div>
+

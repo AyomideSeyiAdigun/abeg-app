@@ -1,0 +1,81 @@
+
+<nav class="nav  justify-content-center"   >
+    <ul class="nav ">             
+        <li class="nav-item "  >
+            <button class="btn" (click)="signUp()" >ETHWAS</button>
+        </li>
+          <li class="nav-item "   >
+              <button class="btn" (click)="logIn()">Log in</button>
+          </li>
+           
+        </ul>
+       
+      
+ </nav>
+ <div class="registerBox">
+
+ 
+
+<div *ngIf="pages==''" class="signUp">
+    <h3>Sign up for ETHWAS</h3>
+    <h5>First, Input your Full Legal Name and your valid email</h5>
+<form (submit)="collectNewUserName()" [formGroup]="NewUserName" >
+    
+<div class="formClass">
+    <input class="form-control" formControlName="FirstName" placeholder="First Name"/>
+</div>
+<div class="formClass">
+    <input class="form-control" formControlName="MiddleName" placeholder="Middle Name(Optional)"/>
+</div>
+<div class="formClass">
+    <input class="form-control" formControlName="LastName" placeholder="Last Name"/>
+</div>
+<div class="formClass">
+    <input class="form-control" formControlName="Email" placeholder="Email"/>
+</div>
+<button type="submit" class="btn btn-primary">Next</button>
+ 
+</form>
+<div style="text-align: center; margin-top: 5.5%;">
+    <hr style="width: 50%; margin-left: 25%;">
+<span style="font-size:small; "> © 1999–2021 All rights reserved.</span> <br>
+<a href="" class="linkTag">Privacy</a> <a href="" class="linkTag">Legal</a> <a href="" class="linkTag">Contact</a>
+</div>
+
+</div>
+
+<!-- alert box -->
+<div *ngIf='alertIt' class="alertDiv">
+{{alertValue}}
+</div>
+
+<!-- New User Sign Up starts -->
+
+<div *ngIf="pages=='signUpName'">
+    <app-register-name ></app-register-name>
+</div>
+
+<div *ngIf="pages=='signBirthday'">
+    <app-register-birth-day (location)="gotoAddressPage($event)" ></app-register-birth-day>
+    
+</div>
+<div *ngIf="pages=='signAddress'">
+    <app-register-location (telephone)="gotoContactPage($event)"></app-register-location>
+</div>
+
+<div *ngIf="pages=='signTermsandCons'"> 
+    <app-terms-and-cons (login)='gotoLoginpage($event)'></app-terms-and-cons>
+</div>
+<div *ngIf="pages=='signNumber'" >
+    <app-registr-number (token)="gotoTokenPage($event)"></app-registr-number>
+</div>
+<div *ngIf="pages=='signTokenPage'">
+    <app-token-page (password)="gotoPasswordPage($event)"></app-token-page>
+</div>
+<div *ngIf="pages=='signPasswordPage'">
+    <app-password-page (termsandcons)="signTermsandConsPage($event)"></app-password-page>
+</div>
+</div>
+
+<!-- 
+By continuing, you confirm that you’re the owner or primary user of this mobile phone number. You agree to receive automated texts to confirm your phone number. Message and data rates may apply. -->

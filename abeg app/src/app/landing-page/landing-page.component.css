@@ -1,0 +1,159 @@
+.body{
+    background-color:red;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+     text-align: center;
+     margin-top: -100px;
+     
+     
+
+}
+.Bbody2{
+    background-color:white;
+    height: 500px;
+    text-align: center;
+    
+    
+
+}
+.body3{
+    background-color:whitesmoke;
+    height: 500px;;
+    text-align: center;
+
+}
+.body4{
+    background-color:darkblue;
+    height: 400px;
+    color: white;
+    font-size: small;
+     
+
+}
+.body5{
+    background-color:ghostwhite;
+    height: 250px;
+    text-align: center;
+
+}
+.firstBackTextBox{
+    margin-top: 100px;
+    padding-top: 150px;;
+
+}
+.body6{
+    background-color:white;
+    height: 200px;  
+    padding-left: 80px;
+    padding-top: 30px;
+}
+.hideBar{
+    height: 200px;
+    background-color: rgb(2, 3, 66);
+    
+}
+.personalBtn{
+    border: none;
+    background-color: transparent;
+    font-size: small;
+    font-weight: bold;
+}
+.loginBtn{
+    background-color: transparent;
+    border-radius: 20px;
+    border: 1px solid slateblue;
+    width: 80px;
+    font-size: small;
+    height: 30px;
+}
+.signinBtn{
+    background-color:slateblue;
+    border-radius: 20px;
+    border: 1px solid slateblue;
+    width: 80px;
+    font-size: small;
+    height: 30px;
+    color: white;
+
+}
+.barHead{
+    font-size: small;
+    color: white;
+    text-decoration: none;
+}
+.barBody{
+    font-size: 10px;
+    color: white;
+    text-decoration: none;
+}
+.barHead:hover{
+    text-decoration: white;
+}
+.firstBox{
+     margin-left: 30%;
+    
+     
+}
+.secondBox{
+    margin-left: 65%;
+    margin-top: -10%;
+}
+.bodyCover{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.4;
+}
+.signUp{
+    width: 300px;
+    height: 60px;
+    color: white;
+    border-radius: 50px;
+    border: none;
+    background-color: rgb(23, 23, 230);
+}
+.individualLearnMore{
+    width: 180px;
+    height: 50px;
+    border: 1px solid slateblue;
+    border-radius:50px;
+    background-color: transparent;
+}
+.forbuyerBtn{
+    border:none;
+    border-bottom: 1px solid black;
+    width: 100px;
+    background-color: transparent;
+    padding-top: 10px;
+    font-size: small;
+}
+.linkTag{
+    color: white;
+    text-decoration: none;
+}
+.linkTag:hover{
+    text-decoration: white;
+}
+.getStarted{
+    width: 300px;
+    height: 46px;
+    color: white;
+    border-radius: 50px;
+    border: none;
+    background-color: rgb(26, 99, 182);
+
+}
+.linkTag2{
+    color:rgb(100, 98, 98);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: small;
+    padding-right:3%;
+}
+.linkTag3{
+    color:rgb(100, 98, 98);
+    text-decoration: none;
+    font-size: 12px;
+    padding-right:3%;
+}

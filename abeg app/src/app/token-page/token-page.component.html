@@ -1,0 +1,18 @@
+<div>
+<h4>Input the token sent to you</h4>
+<div>
+    <input class="form-control"   style="margin-left: 35%; width: 400px;" [(ngModel)]='tokenValue' placeholder="token"/>
+    <br><br>
+    <button class="btn btn-primary" (click)="confirmToken()">confirm</button>
+</div>
+<div *ngIf="showToken" class="tokenBox">
+    <h5>Token</h5>
+             {{token}}
+</div>
+<div style="text-align: center; margin-top: 25%; position:fixes;">
+    <hr style="width: 50%; margin-left: 20%;">
+<span style="font-size:small; "> © 1999–2021 All rights reserved.</span> <br>
+<a href="" class="linkTag">Privacy</a> <a href="" class="linkTag">Legal</a> <a href="" class="linkTag">Contact</a>
+</div>
+</div>
+

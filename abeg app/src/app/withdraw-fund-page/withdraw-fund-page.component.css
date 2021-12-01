@@ -1,0 +1,8 @@
+.formclass{
+    width: 70%;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    background-color: cadetblue;
+    outline: none;
+}

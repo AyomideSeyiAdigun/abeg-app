@@ -1,0 +1,11 @@
+.createBox{
+    text-align: center;
+}
+.formClass{
+    width: 220px;
+    background-color: beige;
+    border: none;
+    height: 35px;
+    border-radius: 20px;
+    outline:none;
+}

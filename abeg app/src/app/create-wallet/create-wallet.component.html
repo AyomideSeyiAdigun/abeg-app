@@ -1,0 +1,18 @@
+
+<div class="createBox">
+    <br>
+    <h5>create wallet</h5>
+    <div>
+        Total Amount: {{totalAmount | currency : 'NGN' :'symbol-narrow' }}
+    </div> <br>
+    <div>
+        <label >Input Wallet name:</label> <br>
+        <input  class="formClass" [(ngModel)]="wallet.name">
+    </div> <br>
+    <div>
+        <label >Funding Amount: </label> <br>
+        <input  class="formClass" type="number" [(ngModel)]="wallet.amount">
+    </div>
+    <br>
+    <button class="btn btn-success" (click)="walletcreated()">create</button>
+</div>

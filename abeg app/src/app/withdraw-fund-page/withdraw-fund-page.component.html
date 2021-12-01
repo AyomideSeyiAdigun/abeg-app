@@ -1,0 +1,12 @@
+<div>
+    Main  Balance: <br> <strong> {{personTotalMoney | currency: 'NGN' : 'symbol-narrow'}} </strong> <br>
+    Wallet Balance: <br> <strong> {{userWallet.amount | currency: 'NGN' : 'symbol-narrow'}} </strong>
+    <div>
+        <label>Amount to withdraw</label> <br>
+        <input  class="formclass" [(ngModel)]="amountToWithdraw" placeholder="amount to withdraw"> <br> <br>
+        <button  class="btn btn-success" (click)="withdrawFund()">fund</button>
+    </div>
+
+     
+</div>
+ 

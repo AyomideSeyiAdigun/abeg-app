@@ -1,0 +1,22 @@
+ 
+    
+    <div class="logIn">
+
+    <h4>ETHWAS </h4>
+    <div >
+        <div class="formClass">
+            <input class="form-control" [(ngModel)]="User.email" placeholder="Email"  >
+        </div>
+        <div class="formClass">
+            <input class="form-control" [(ngModel)]="User.password" placeholder="Password" >
+        </div>
+        <div >
+            <button  class="btn btn-primary" style="width: 300px; height: 30px; font-size: small; margin-left: -4%;"  (click)="login()">Login</button>
+        </div>
+        <div style="margin-left: 12%;">
+        <div style="margin-left:5%;"><hr style="width: 33%;"></div> <div style="margin-top: -8%; margin-right:20%;">or</div> <div style="margin-top:-7%; margin-left:43%;"><hr style="width: 55%;"></div> 
+    </div>
+    </div>
+    <button class="btn" style="width: 300px; height: 30px; font-size: small; margin-left: -4%; background-color: whitesmoke;" (click)="signUpNow()">singUp</button>
+</div>
+ 

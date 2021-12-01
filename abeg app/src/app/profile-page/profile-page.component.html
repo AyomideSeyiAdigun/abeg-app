@@ -1,0 +1,100 @@
+<div>
+    <div style="margin-left: 90%;margin-top: 20px;" (click)=cancelBtn()><svg   xmlns="http://www.w3.org/2000/svg" style="margin-left: 15px;" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+        <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"/>
+      </svg></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div style="margin-top: 50px;;"> 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                      </svg>
+                </div>
+                <br>
+                <div>
+                  FIRST  NAME:<strong> {{user.FirstName | uppercase}} </strong> <br>
+                  MIDDLE NAME:<strong> {{user.MiddleName | uppercase}} </strong> <br>
+                  LAST NAME :<strong> {{user.LastName | uppercase}} </strong> <br>
+                  ACCOUNT NUMBER :<strong> {{user.accountNumber}} </strong> <br>
+                  EMAIL:<strong> {{user.Email | uppercase}} </strong> <br>
+                  NUMBER:<strong> {{user.Number}} </strong> <br> 
+         
+                </div><br>
+                <div>
+                    <button  class="btnn" (click)="showName()">Change Name</button> <br> <br>
+                    <button class="btnn" (click)="showContact()">Change Contact </button> <br><br>
+                    <button class="btnn" (click)="showAddress()">Change Address</button> <br>
+                </div>
+
+            </div>
+            <div class="col-md-6" style="text-align: center; margin-top: 90px;" >
+                <!-- name box starts -->
+                <div *ngIf="showPage=='nameBox'" >
+                     
+                
+                    
+                    <div >
+                        <label >FirstName</label> <br>
+                        <input class="btnn2" type="" [(ngModel)]="userInfo.FirstName">
+                    </div>
+                    <div>
+                        <label >MiddleName</label> <br>
+                        <input class="btnn2" type="" [(ngModel)]="userInfo.MiddleName"> </div>
+                    <div>
+                        <label >LastName</label> <br>
+                        <input class="btnn2" type="" [(ngModel)]="userInfo.LastName"> </div> 
+                        <br>
+                        <button class="btn btn-primary" (click)="changeName()">Save Edit</button>
+             
+            </div>
+             <!-- name ends -->
+             <!-- contact box starts -->
+             <div *ngIf="showPage=='contactBox'" >
+              
+                    
+                <div >
+                    <label >Account Number</label> <br>
+                    <input class="btnn2" class="btnn2" type="" [(ngModel)]="userInfo.Number">
+                </div>
+                <div>
+                    <label >Email</label> <br>
+                    <input class="btnn2" type="" [(ngModel)]="userInfo.Email">
+                 </div>
+                
+                    <br>
+                    <button  class="btn btn-primary" (click)="changeContact()">Save Edit</button>
+          
+
+             </div>
+             <!-- contact box ends  -->
+             <!-- address box starts  -->
+             <div *ngIf="showPage=='addressBox'" >
+                                   
+                    <div >
+                        <label>Street</label> <br>
+                        <input class="btnn2" type="" [(ngModel)]="userInfo.Street">
+                    </div>
+                    <div>
+                        <label >City</label> <br>
+                        <input class="btnn2" type="" [(ngModel)]="userInfo.City">
+                     </div>
+                     <div >
+                        <label >State</label> <br>
+                        <input class="btnn2" type="" [(ngModel)]="userInfo.State">
+                    </div>
+                    <div>
+                        <label >Country</label> <br>
+                        <input class="btnn2" type="" [(ngModel)]="userInfo.Country">
+                     </div>
+                     <br>
+                        <button  class="btn btn-primary" (click)="changeAddress()">Save Edit</button>
+               
+             </div>
+             <!-- address box ends  -->
+                
+            </div>
+        </div>
+
+    </div>
+</div>

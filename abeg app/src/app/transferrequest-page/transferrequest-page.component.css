@@ -1,0 +1,16 @@
+.moneyRequestBox{
+    width: 98%;
+    height: 460px;
+    overflow:auto;
+}
+.boxx{
+    text-align: center;
+}
+.formclass{
+    width: 240px;
+    height: 35px;
+    background-color: darkgrey;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}

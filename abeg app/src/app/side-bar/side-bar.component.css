@@ -1,0 +1,18 @@
+.sidebar{
+    width:160px;
+    height:628px;
+     background-color: white;
+    margin-top: -5.5%;
+    border-radius: 10px;
+}
+.profileSpace{
+    width: 100%;
+    height: 30%;
+     
+}
+.buttonNow{
+    background-color:transparent;
+    border: none;
+    margin-top: 3%;
+    margin-left: 4%;
+}

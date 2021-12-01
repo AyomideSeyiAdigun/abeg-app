@@ -1,0 +1,16 @@
+.linkTag{
+    text-decoration: none;
+    font-size: small;
+    color: rgb(133, 132, 132);
+    margin-right: 5px;
+}
+.tokenBox{
+    width: 200px;
+    height: 70px;
+    border-radius: 10px;
+    border: rgb(15, 66, 160);
+    background-color: cornflowerblue;
+    color: white;
+    text-align: center;
+    margin-left: 60%;
+}
