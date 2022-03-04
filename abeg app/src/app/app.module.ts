@@ -30,7 +30,7 @@ import { UserServiceService } from './services/user-service.service';
 import { TransferrequestPageComponent } from './transferrequest-page/transferrequest-page.component';
 import { SendMoneyRequestPageComponent } from './send-money-request-page/send-money-request-page.component';
 import { WithdrawFundPageComponent } from './withdraw-fund-page/withdraw-fund-page.component';
-import { AppServerComponent } from './app-server.component';
+
 
 @NgModule({
   declarations: [
@@ -60,7 +60,7 @@ import { AppServerComponent } from './app-server.component';
     TransferrequestPageComponent,
     SendMoneyRequestPageComponent,
     WithdrawFundPageComponent,
-    AppServerComponent
+
   ],
   imports: [
     BrowserModule,
